@@ -5,6 +5,8 @@
     android:gravity="center_vertical"
     android:background="#66FF66"
     android:stretchColumns="0,3"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     >
     <TableRow>
 
@@ -21,11 +23,10 @@
             android:textStyle="bold"></TextView>
 
         <EditText
+            android:id="@+id/txtUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:inputType="text"
             android:minWidth="250px" />
 
@@ -33,6 +34,7 @@
     </TableRow>
 
     <TableRow
+        android:id="@+id/txtUserPwd"
         android:layout_width="250px"
         android:padding="5dp"
         android:textAlignment="viewStart">
@@ -53,8 +55,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
             android:inputType="text"
             android:minWidth="250px" />
 
@@ -73,6 +73,7 @@
             android:width="200px"
             android:background="#2196F3"
             android:minWidth="0dp"
+            android:onClick="sendMessage"
             android:text="登录"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
