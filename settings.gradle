@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':queueevaluationclient'
 rootProject.name='MyFirstDemo'

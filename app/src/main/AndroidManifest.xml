@@ -3,7 +3,8 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.qingjue.myfirstdemo">
 
-    <dist:module dist:instant="true" />
+    <dist:module dist:instant="true" /> <!-- 权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -12,20 +13,121 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity
-            android:name=".activity_meizi"></activity>
-        <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.TestSendBroadcast">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.BroadReceiverDemo2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.BroadReceiverDemo1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ServiceTest3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ServiceTest2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ServiceTest">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AsyncTaskActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ConfigActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ClearEditTextActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MultiTouchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TouchEventActivity" />
+        <activity android:name=".TouchListenerActivity" />
+        <activity android:name=".HandlerInOuterThread" />
+        <activity android:name=".HandlerInMainThread" />
+        <activity android:name=".EventCallBackDemo" />
+        <activity android:name=".EventDemoActivity" />
+        <activity android:name=".activity_meizi" />
+        <activity android:name=".MainActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity> <!-- 配置Service组件,同时配置一个action -->
+        <service android:name=".Service.TestService1">
+            <intent-filter>
+                <action android:name="com.qingjue.myfirstdemo.Service.TestService1" />
+            </intent-filter>
+        </service>
+        <service android:name=".Service.TestService2">
+            <intent-filter>
+                <action android:name="com.qingjue.myfirstdemo.Service.TestService2" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Service.TestService3"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.qingjue.myfirstdemo.Service.TestService3" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".Broadcast.BroadReceiverStatic">
+            <intent-filter>
+                <action android:name="android.intent.cation.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".Broadcast.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.example.broadcasttest.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
